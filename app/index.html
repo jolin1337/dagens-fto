@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes">
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=yes, initial-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <title>FTO - Franciskus tredje orden</title>
+    </head>
+    <body>
+        <form name="loginform" id="login_form" class="fullscreen" enctype="application/x-www-form-urlencoded" action="https://fto.st/wordpress/?rest_route=/fto/v1/login" method="post">
+            <input type="text" id="login_user" name="user">
+            <input type="password" id="login_password" name="pwd">
+            <input type="submit" name="wp-submit" value="Logga in">
+        </form>
+        <div class="jumbotron">
+            <h1><img src="img/logo.png" style="float: left;"> - Att leva med ordensregeln</h1>
+            <h4>
+                <span class="glyphicon glyphicon glyphicon-chevron-left back-date"></span>
+                <span class="current-date">Dag 12/11 - 2014</span>
+                <span class="glyphicon glyphicon glyphicon-chevron-right forward-date"></span>
+            </h4>
+        </div>
+        <div style="position: relative;overflow: hidden;">
+            <div id="data_feeds">
+            </div>
+        </div>
+        <div class="static-content hidden">
+            <div id="static_rule">
+                <h3>GEMENSAM LYDNAD</h3>
+                <h5><i>Denna b&ouml;n b&ouml;r bedjas dagligen i alla tredje ordens provinser,
+                antingen separat eller i samband med morgon- eller aftonb&ouml;n.</i></h5>
+                Vi tillber dig allra heligaste, Herre Jesus Kristus,<br>
+                h&auml;r och i alla dina kyrkor &ouml;ver hela v&auml;rlden,<br>
+                och vi lovprisar dig f&ouml;r att du med ditt heliga kors<br>
+                har &aring;terl&ouml;st v&auml;rlden. Amen.
+            </div>
+            <div id="static_bon_deprecated">        
+                <h5><i>Till f&ouml;rb&ouml;nerna kan man anv&auml;nda Tredje ordens f&ouml;rb&ouml;nslista eller adresslistan.</i></h5>
+            </div>
+            <div id="static_bon">        
+                O Gud, vi tackar dig f&ouml;r den tredje orden i Society of Saint Francis.<br>
+                Vi ber: l&aring;t oss, dina tj&auml;nare, f&ouml;renade i gemenskap och b&ouml;n,<br>
+                f&aring; lovprisa ditt heliga namn efter den helige Franciskus exempel<br>
+                och vinna andra f&ouml;r din k&auml;rlek.<br>
+                Genom Jesus Kristus, v&aring;r Herre. Amen.<br>
+            </div>
+            <div id="bibelord">
+                <h3 class="panel-title">Dagens bibelord</h3>
+                <span>
+                    <script type="text/javascript" src="http://www.bibeln.se/pren/syndikering.jsp"></script>
+                </span>
+                <img src="./img/frans.png" alt="" id="frans_img">
+            </div>
+            <div id="settings">
+                Settingspage
+                <!-- <iframe src="http://www.communityobedience.com/" width="100%" height="100%"></iframe> -->
+            </div>
+            <div id="faderbon">
+                <h3 class="panel-title">f&ouml;rslag till b&ouml;n f&ouml;r dem man dagligen ber f&ouml;r</h3>
+                    <h3>Fader!</h3>
+                    Ge dem en f&ouml;rdjupad k&auml;rlek till Jesus Kristus.<br>
+                    Ge dem trohet och trofasthet,<br>
+                    n&auml;r det g&auml;ller att h&aring;lla fast vid Kristus.<br>
+                    St&auml;rk deras kristna tro<br>
+                    och l&aring;t denna tro helt pr&auml;gla deras liv och leverne.<br>
+                    Ge dem, Fader, t&aring;lamod och uth&aring;llighet.<br>
+                    Ge dem en sann och &auml;kta &ouml;dmjukhet.<br>
+                    Ge dem frimodighet och gl&auml;dje.<br>
+                    L&aring;t deras franciskanska kallelse b&auml;ra s&aring;dan frukt,<br>
+                    som &auml;r efter ditt sinne.<p>
+
+                    Fader, l&aring;t din v&auml;lsignelse vila &ouml;ver dem.
+            </div>
+            <div id="about_page">
+            <h5>Version:</h5>
+            <p>
+                1.1
+            </p>
+            <h5>Bankgiro:</h5>
+            <p>
+                5298-9415
+            </p>
+            <h5>E-post:</h5>
+            <p>
+                <a href="mailto: info@fto.st">info@fto.st</a><br/>
+                <a href="mailto: webdesign@fto.st">webdesign@fto.st</a>
+            </p>
+            <h5>Internet:</h5>
+            <p>
+                <a href="http://www.fto.st/">http://www.fto.st/</a>
+            </p>
+            <h5>Organistaion i Sverige:</h5>
+            <p>
+                Sverige är en area som har en areaminister (Christer Säll). Denna area består av ett antal lokalgrupper som träffas regelbundet. Just nu finns lokalgrupper i Göteborg, Falun, Uppsala, Stockholm, Linköping. Varje grupp har en convinor (gruppledare/sammankallande). Följande personer är convinor Niklas Lindén för Göteborg, Marie Fredin  för Stockholm, Gun-Britt Eriksson för Falun, Mats Fransson för Linköping, Marcus Thurfjell för Uppsala. Givetvis finns det Tertiarer i hela landet och alla tillhör någon av dessa grupper
+            </p>
+            <h5>Organistaion i Världen:</h5>
+            <p>
+                Sverige är som sagt en area som tillhör en provins. Under första hälften av 1900-talet bildades TSSF inom den världsvida anglikanska kyrkan. ”The Third Order of the Society of Saint Francis”, TSSF, är tillsammans med den Första och den Andra Orden uppdelad på fem provinser i världen. Den europeiska provinsen har Sedan 1970-talet fått en utlöpare även inom Svenska Kyrkan, trots att denna är luthersk och inte anglikansk. Denna gren kallas lite oegentligt ”Franciskus Tredje Orden inom svenska kyrkan” eller FTO
+            </p>
+            </div>
+        </div>
+
+        <div class="btn-group btn-group-lg" style="display: block;text-align: center;position: fixed;bottom: 0;width: 100%;">
+            <button type="button" class="btn btn-default" onclick="app.onDeviceRefrech('home');" style="display: inline-block; width: 33.3333%;">Dagens bön</button>
+            <button type="button" class="btn btn-default" onclick="location.href='http://www.communityobedience.com/';" style="display: inline-block; width: 33.3333%;">TSSF Community Obedience</button>
+            <button type="button" class="btn btn-default" onclick="app.onDeviceRefrech('about');" style="display: inline-block; width: 33.3333%;">Om appen</button>
+        </div>
+        <div style="display: inline-block; height: 30px;width: 10px;"></div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            /*$.ajax('http://www.communityobedience.com/', {
+                method: 'GET',
+                success: () => {
+                    jQuery('#fsst').html(request.responseText);
+                },
+                error: () => {    
+                    alert("error");
+                }
+            })
+            */
+           if (localStorage.getItem('user') == undefined) {
+               jQuery('#login_form').on('submit', function(e) {
+                   e.preventDefault();
+                   e.stopPropagation();
+                   var self = jQuery(this);
+                   jQuery.ajax({
+                       url: self.attr('action'),
+                       type: self.attr('method') || 'get',
+                       dataType: 'json',
+                       crossDomain: true,
+                       data: self.serialize(),
+                       success: function(data) {
+                           app.initialize();
+                           jQuery('#login_form').hide();
+                           localStorage.setItem('user', data);
+                        }
+                    });
+                    return false;
+                });
+            } else {
+                app.initialize();
+                jQuery('#login_form').hide();
+            }
+        </script>
+    </body>
+</html>
