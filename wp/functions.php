@@ -24,7 +24,7 @@ function wpfto_register_routes() {
             'methods' => 'GET',
             'callback' => 'wpfto_reply_with_script',
 			'permission_callback' => function () {
-			  return in_array($_GET['file'], ['dagens_frans', 'pray_day', 'pray_day_no', 'dagens_pray', 'dagens_sats','dagens_sats_no' ]);
+			  return in_array($_GET['file'], ['dagens_frans', 'pray_day', 'pray_day_no', 'dagens_pray', 'dagens_sats','dagens_sats_no', 'fto_pray_intro', 'fto_pray_intro_no' ]);
 			}
       ), true,
   );
