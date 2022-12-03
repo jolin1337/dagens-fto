@@ -159,20 +159,6 @@ $BASE = 'https://johannes.godesity.se/fto/app/';
                 <!-- <iframe src="http://www.communityobedience.com/" width="100%" height="100%"></iframe> -->
             </div>
             <div id="faderbon">
-                <h3 class="panel-title">f&ouml;rslag till b&ouml;n f&ouml;r dem man dagligen ber f&ouml;r</h3>
-                    <h3>Fader!</h3>
-                    Ge dem en f&ouml;rdjupad k&auml;rlek till Jesus Kristus.<br>
-                    Ge dem trohet och trofasthet,<br>
-                    n&auml;r det g&auml;ller att h&aring;lla fast vid Kristus.<br>
-                    St&auml;rk deras kristna tro<br>
-                    och l&aring;t denna tro helt pr&auml;gla deras liv och leverne.<br>
-                    Ge dem, Fader, t&aring;lamod och uth&aring;llighet.<br>
-                    Ge dem en sann och &auml;kta &ouml;dmjukhet.<br>
-                    Ge dem frimodighet och gl&auml;dje.<br>
-                    L&aring;t deras franciskanska kallelse b&auml;ra s&aring;dan frukt,<br>
-                    som &auml;r efter ditt sinne.<p>
-
-                    Fader, l&aring;t din v&auml;lsignelse vila &ouml;ver dem.
             </div>
             <div id="about_page">
             <h5>Version:</h5>
@@ -300,13 +286,13 @@ $BASE = 'https://johannes.godesity.se/fto/app/';
                     if(info == undefined || !objectExists(info, pages_tmp)) return;
                     if(info.isStatic())
                         $(cid).html($(cid).html() + getStylish(info, $(info.id).html()));
-                    else {
-                        var count = $(cid).find('div').length;
+                    else if ($(request.responseText).filter('script').length) {
+                            var count = $(cid).find('div').length;
                         (new Function(
                             "cid",
                             "getStylish", 
                             $(request.responseText).filter('script').text().replace(
-                                /document\.write\((.*)\)/, 
+                                /document\.write\((.*)\)/g, 
                                 "$(cid).html($(cid).html() + getStylish(new Page('" + info.id + "', '" + info.title + "', '" + info.color + "', '" + info.base + "'), $1))")
                         ))(cid, getStylish);
                         var html = $(request.responseText).not('script');
@@ -330,6 +316,8 @@ $BASE = 'https://johannes.godesity.se/fto/app/';
                             //     //$(cid).append(getStylish(info, $(request.responseText).html()));
                             // }
                         }
+                    } else {
+                        $(cid).html($('<div class="feed-item">' + request.responseText + '</div>'));
                     }
             
                     if(pages_tmp.length > 0) {
@@ -365,15 +353,15 @@ $BASE = 'https://johannes.godesity.se/fto/app/';
                 var yellow = "#fcf8e3";
                 var pink = "#ffeeee";
                 var trans = "transparent";
-                
+                var lang = location.hash.substring(1).replace('_sv', '').replace('sv', '').replace('no', '_no')
                 var p = [
                     new Page("&file=dagens_frans", "Dagens Franciskus", trans),
-                    new Page("&file=pray_day", "Kollektbönen", trans),
+                    new Page("&file=pray_day" + lang, "Kollektbönen", trans),
                     new Page("#faderbon", "", trans, ""),                   // Fader bön förslag till bön dagligen
-                    new Page("&file=dagens_pray", "Vi ber för", trans),
-                    new Page("&file=dagens_sats", "", trans),                     // Random text från bibeln pink
+                    new Page("&file=dagens_pray", "", trans),
+                    new Page("&file=dagens_sats" + lang, "", trans),                     // Random text från bibeln pink
                     new Page("#bibelord", "", trans, ""),                       // Dagens bibelord
-                    new Page("#static_rule", "", trans, "")                 // Att leva med ordens regler
+                    new Page("&file=fto_pray_intro" + lang, "", trans)                 // Att leva med ordens regler
                 ];
                 var p2 = [
                     new Page("#settings", "", trans, "")
