@@ -67,4 +67,18 @@ function wpfto_custom_redirects() {
     }
 }
 add_action( 'template_redirect', 'wpfto_custom_redirects' );
+
+
+/**
+ * WordPress function for redirecting users on login based on user role
+ */
+function wpfto_login_redirect( $url, $request, $user ) {
+    if ( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
+        wp_redirect( $url );
+        exit();
+    }
+    return $url;
+}
+
+add_filter( 'login_redirect', 'wpfto_login_redirect', 1, 3 );
 ?>
